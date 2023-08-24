@@ -1,0 +1,36 @@
+syntax on
+set number
+set cursorline
+set nocursorcolumn
+set norelativenumber
+set wrap
+set showcmd
+set wildmenu
+set hlsearch
+set incsearch
+set tabstop=4
+exec "nohlsearch"
+
+map <SPACE>s :w<CR>
+map <SPACE>q :q!<CR>
+map <SPACE>r :source $MYVIMRC<CR>
+
+noremap tt :NERDTree<CR>
+noremap <SPACE>i :TagbarToggle<CR>
+noremap <SPACE>j <C-]>
+noremap <SPACE>k <C-t>
+noremap <SPACE>ag :Ag 
+noremap <SPACE>f :Files<CR>
+noremap cc <C-w><C-w>
+
+"vim Plugin
+call plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+
